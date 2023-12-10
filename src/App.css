@@ -1,0 +1,172 @@
+/* variables */
+
+:root {
+  --font-size: 1rem;
+}
+
+/*  */
+body {
+  background-color: #242424;
+  color: #fff;
+}
+
+#root {
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
+  width: 100%;
+  height: calc(100vh - 0.5rem);
+  max-width: 450px;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.todo {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  text-align: left;
+  /* gap: 10px; */
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.form {
+  height: 40px;
+  display: flex;
+  padding: 5px 0;
+  gap: 4px;
+  display: flex;
+}
+
+.form>* {
+  border-radius: 4px;
+  border: 0;
+}
+
+.form input {
+  padding: 0 7px;
+  width: 70%;
+  font-size: var(--font-size);
+}
+
+.form button {
+  width: 30%;
+  font-size: var(--font-size);
+}
+
+.taks-list {
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.taks-list li {
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 10px 10px 10px 50px;
+  border-radius: 4px;
+  background-color: #fff;
+  font-weight: 600;
+  color: #242424;
+}
+
+.taks-list li.completed {
+  opacity: 0.8;
+  order: 99999;
+}
+
+.taks-list li:hover {
+  cursor: pointer;
+}
+
+.taks-list li span {
+  padding-right: 4px;
+}
+
+.taks-list li.completed span {
+  text-decoration: line-through;
+}
+
+.taks-list li::before {
+  content: "📌";
+}
+
+.taks-list li::after {
+  content: "✅";
+  opacity: 0;
+}
+
+.taks-list li::before,
+.taks-list li::after {
+  font-size: 14px;
+  position: absolute;
+  left: 10px;
+  background-color: #242424b2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 23px;
+  height: 23px;
+  padding: 5px;
+  border-radius: 50%;
+  /* font-size: var(--font-size); */
+  transition: all 0.3s ease-in;
+}
+
+.taks-list li.completed::before {
+  opacity: 0;
+}
+
+.taks-list li.completed::after {
+  opacity: 1;
+  background-color: transparent;
+}
+
+.remove-btn {
+  background-color: transparent;
+  color: #fa0707;
+  border: 0;
+  transition: all 0.2s ease-in;
+}
+
+.remove-btn:hover {
+  border: 0;
+  background-color: #242424;
+}
+
+.remove-btn:focus {
+  outline: 0;
+}
