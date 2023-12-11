@@ -6,7 +6,6 @@ function Form({ tasks, setTasks }) {
     function handleTasks() {
         if (task == '') return;
         setTasks([...tasks, task]);
-        // console.log(tasks, tsk)
     }
 
     function changeInput(inputValue) {
@@ -16,7 +15,7 @@ function Form({ tasks, setTasks }) {
     return (
         <div className='form'>
             <input type='text' onChange={e => changeInput(e.target.value)} />
-            <button onClick={handleTasks}>Add task</button>
+            <button className='primary-btn' onClick={handleTasks}>Add task</button>
         </div>
     )
 }
