@@ -86,38 +86,32 @@ body
   border-top-right-radius: 10px
   border-top-left-radius: 0
   border-bottom-left-radius: 0
-  border-bottom-right-radius: 10px
+  border-bottom-right-radius: 10px 
 
-
-.taks-list 
+.taks-list
   padding-left: 0
   display: flex
   flex-direction: column
   gap: 4px
 
-
-.taks-list li 
-  text-align: left
-  display: flex
-  align-items: center
-  justify-content: space-between
-  position: relative
-  padding: 15px 10px 15px 50px
-  border-radius: 4px
-  background-color: #fff
-  font-weight: 600
-  color: #242424
-  transition: all 0.3s ease-in
-
-
-.taks-list li.completed 
-  opacity: 0.8
-  order: 99999
-
-
-.taks-list li:hover 
-  cursor: pointer
-
+  li 
+    text-align: left
+    display: flex
+    align-items: center
+    justify-content: space-between
+    position: relative
+    padding: 15px 10px 15px 50px
+    border-radius: 4px
+    background-color: #fff
+    font-weight: 600
+    color: #242424
+    transition: all 0.3s ease-in
+    
+    &:hover
+      cursor: pointer
+    &.completed
+      opacity: 0.8
+      order: 99999
 
 .taks-list li span 
   padding-right: 4px
@@ -206,6 +200,9 @@ body
   background-color: #1a1a1a
   padding: 8px 20px
   border-radius: 10px
+  transition: all 0.3s ease-in
+  &.active
+      background-color: #5c5c5c
 
 
 .addtab-btn 

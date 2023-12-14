@@ -1,4 +1,4 @@
-function Tabs() {
+function Tabs({ tabsObj, setActiveTab, activeTab }) {
 
     function openTabInput(btn) {
         const container = btn.parentElement;
@@ -14,9 +14,19 @@ function Tabs() {
 
     }
 
+    function activateTab(tabName) {
+        setActiveTab(tabName)
+    }
+
+    const Tabs = tabsObj.map((tab, index) => {
+        return (
+            <div className={activeTab == tab.name ? 'active tab' : 'tab'} key={tab.name + index} onClick={evt => { activateTab(evt.target.dataset.name) }} data-name={tab.name}>{tab.name}</div>
+        )
+    })
+
     return (
         <div className="tabs">
-            {/* <div className="tab">Tab 1</div> */}
+            {Tabs}
             <div onClick={evt => { openTabInput(evt.target) }} className="addtab-btn">➕</div>
             <div className="tabinput">
                 <input type="text" />
